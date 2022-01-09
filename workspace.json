@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "api": "apps/api",
+    "data": "libs/data",
     "frontend": "apps/frontend",
     "frontend-e2e": "apps/frontend-e2e"
   }

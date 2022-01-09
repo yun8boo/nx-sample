@@ -1,15 +1,15 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { Todo } from "@nx-sample/data";
 
-interface Todo {
-  id:string;
-  title: string;
-}
 
 export default function Index() {
-  const [todoList, setTodoList] = useState<Todo[]>([
-    { id:'todo1', title: 'Todo 1' },
-    { id:'todo2', title: 'Todo 2' },
-  ]);
+  const [todoList, setTodoList] = useState<Todo[]>([]);
+
+  useEffect(() => {
+    fetch('/api/todo')
+      .then((_) => _.json())
+      .then(setTodoList);
+  }, []);
 
   const addTodo = ()=> {
     setTodoList((prev)=>[

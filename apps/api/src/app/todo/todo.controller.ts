@@ -1,11 +1,7 @@
 import { Controller, Get, Post } from '@nestjs/common';
+import { Todo } from '@nx-sample/data';
 
-interface Todo {
-  id: string;
-  title: string;
-}
-
-const todos = [
+const todos: Todo[] = [
   { id: 'todo1', title: 'Todo 1' },
   { id: 'todo2', title: 'Todo 2' },
 ];
